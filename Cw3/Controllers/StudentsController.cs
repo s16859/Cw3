@@ -36,10 +36,20 @@ namespace Cw3.Controllers
         public IActionResult CreateStudent(Student student)
         {
             student.IndexNumber = $"s{new Random().Next(1, 20000)}";
-            Console.Write(student);
             return Ok(student);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult updateStudent(int id)
+        {
+            return Ok($"Aktualizacja dokonczona id={id}");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult deleteStudent(int id)
+        {
+            return Ok($"Usuwanie ukonczone id={id}");
+        }
 
     }
 }
