@@ -12,9 +12,9 @@ namespace Cw3.Controllers
     public class StudentsController : ControllerBase
     {
         [HttpGet]
-        public string GetStudent()
+        public string GetStudents(string orderBy)
         {
-            return "Kowalski,Malewski,Andrzejewski";
+            return $"Kowalski,Malewski,Andrzejewski sortowanie={orderBy}";
         }
 
         [HttpGet("{id}")]
@@ -30,5 +30,6 @@ namespace Cw3.Controllers
 
             return NotFound("Nie znaleziono studenta");
         }
+
     }
 }
